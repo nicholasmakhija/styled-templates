@@ -48,33 +48,56 @@ export const AppRoot = styled
     body
   );
 
-export const Button = styled.button({
-  display: 'inline-block',
-  margin: 0,
-  padding: `${asRem(6)} ${asRem(18)}`,
-  width: 'auto',
-  appearance: 'none',
-  verticalAlign: 'middle',
-  color: 'rgb(15, 23, 42)',
-  fontSize: asRem(14),
-  lineHeight: asRem(24),
-  fontWeight: 'normal',
-  fontFamily: 'Verdana, sans-serif',
-  textAlign: 'center',
-  textDecoration: 'none',
-  cursor: 'pointer',
-  borderWidth: asRem(2),
-  borderStyle: 'solid',
-  borderRadius: asRem(4),
-  borderColor: 'transparent',
-  backgroundColor: 'rgb(147 197 253)',
-  [style.disabled]: {
-    backgroundColor: 'rgba(255, 255, 255, 0.12)',
-    color: 'rgba(255, 255, 255, 0.3)',
-    cursor: 'not-allowed'
+  type ButtonVariants = 'solid' | 'outline';
 
-  }
-});
+  const variantMap: Record<string, CSSProperties> = {
+    solid: {
+      borderColor: 'transparent',
+      backgroundColor: 'rgb(147 197 253)',
+      [style.disabled]: {
+        cursor: 'not-allowed',
+        backgroundColor: 'rgba(255, 255, 255, 0.12)',
+        color: 'rgba(255, 255, 255, 0.3)',  
+      }
+    },
+    outline: {
+      borderColor: 'rgb(147 197 253)',
+      color: 'rgb(147 197 253)',
+      backgroundColor: 'transparent',
+      [style.disabled]: {
+        cursor: 'not-allowed',
+        borderColor: 'rgba(255, 255, 255, 0.3)',
+        color: 'rgba(255, 255, 255, 0.3)',  
+      }
+    }
+  };
+  
+  export const Button = styled.button<{
+    children?: JSXElement;
+    disabled?: boolean;
+    variant?: ButtonVariants;
+    onClick?: (e: Event) => void;
+  }>({
+    ...variantMap.solid,
+    display: 'inline-block',
+    margin: 0,
+    padding: `${asRem(6)} ${asRem(18)}`,
+    width: 'auto',
+    appearance: 'none',
+    verticalAlign: 'middle',
+    color: 'rgb(15, 23, 42)',
+    fontSize: asRem(14),
+    lineHeight: asRem(24),
+    fontWeight: 'normal',
+    fontFamily: 'Verdana, sans-serif',
+    textAlign: 'center',
+    textDecoration: 'none',
+    cursor: 'pointer',
+    borderWidth: asRem(2),
+    borderStyle: 'solid',
+    borderRadius: asRem(4),
+    [style.props.any('variant')]: (variant: ButtonVariants) => variantMap[variant] 
+  });
 
 export const Code = styled.code({
   display: 'inline-block',
