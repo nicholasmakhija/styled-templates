@@ -50,7 +50,7 @@ export const AppRoot = styled
 
   type ButtonVariants = 'solid' | 'outline';
 
-  const variantMap: Record<string, CSSProperties> = {
+  const variantMap: { [key in ButtonVariants]: CSSProperties } = {
     solid: {
       borderColor: 'transparent',
       backgroundColor: 'rgb(147 197 253)',
