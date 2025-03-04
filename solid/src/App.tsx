@@ -16,7 +16,11 @@ const Counter = () => {
     <Box flex='center' paradigm='right'>
       <Button
         disabled={count() >= 5}
-        onClick={() => setCount((count) => count + 1)}
+        onClick={(e) => {
+          e.preventDefault();
+          
+          setCount((count) => count + 1)
+        }}
       >
         count is {count()}
       </Button>

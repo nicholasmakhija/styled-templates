@@ -145,9 +145,10 @@ export const Container = styled.div<{
     maxWidth: asRem(CONTAINER_WIDTHS.XL)
   },
   [style.prop('isVerticallyCentred')]: {
-    display: 'flex',
-    alignItems: 'center',
-    height: '100vh'
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)'
   },
   [style.prop('isFullWidth')]: {
     maxWidth: `${CONTAINER_WIDTHS.XS}%`
