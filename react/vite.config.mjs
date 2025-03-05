@@ -4,14 +4,18 @@ import react from '@vitejs/plugin-react';
 /**
  * @returns {import('vite').Plugin}
  */
-const fullReloadAlways = () => ({
-  name: 'vite-plugin-full-reload-always',
-  handleHotUpdate({ server }) {
-    server.ws.send({
-      type: 'full-reload'
-    });
+const computedStyleReload = () => ({
+  name: 'vite-plugin-computed-style-reload',
+  handleHotUpdate({ read, server }) {
+    /** @type {Promise<string>} */(read()).then((content) => {
+      const computedStyles = content.match(/style.prop([^$]+?)]: \(/g) || [];
 
-    return [];
+      if (computedStyles.length) {
+        server.ws.send({
+          type: 'full-reload'
+        });
+      }
+    });
   },
 });
 
@@ -23,7 +27,7 @@ export default defineConfig({
     open: true
   },
   plugins: [
-    fullReloadAlways(),
+    computedStyleReload(),
     react()
   ],
 });
