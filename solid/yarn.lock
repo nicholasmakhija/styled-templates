@@ -320,10 +320,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@n3e/styled@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@n3e/styled/-/styled-1.0.1.tgz#e0c0835895f3ee3f8b37928a70e5bc8d80343a7f"
-  integrity sha512-DC/JGGVqIeiZGCaOr+vppI23Gp/D92cF34dOh4Ve74F7qbrJaWOOEYjkSaJHIaPZkpGZ/S7vL1TnV4RWX/5Juw==
+"@n3e/styled@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@n3e/styled/-/styled-1.0.2.tgz#9d168e296962e54750a0c11dd63cb801f62a6eed"
+  integrity sha512-arFYWbxfcFvUQ+dg30AG6e3P9PgWVfnAkS2Eaa6SmyLxnF0Z8j4nXE5hFVezuZxiSLhvuk7DDU3RxBgkkFlrXQ==
   dependencies:
     csstype "^3.1.2"
     react "^17.0.2"
@@ -707,10 +707,20 @@ seroval-plugins@^1.1.0:
   resolved "https://registry.yarnpkg.com/seroval-plugins/-/seroval-plugins-1.2.1.tgz#fa535e70ade8af553634b2b5c80d8a6fd8c2ff72"
   integrity sha512-H5vs53+39+x4Udwp4J5rNZfgFuA+Lt+uU+09w1gYBVWomtAl98B+E9w7yC05Xc81/HgLvJdlyqJbU0fJCKCmdw==
 
+seroval-plugins@~1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/seroval-plugins/-/seroval-plugins-1.5.0.tgz#c02ba5f41d50b8105d4d9d4c553a4d01cec4226a"
+  integrity sha512-EAHqADIQondwRZIdeW2I636zgsODzoBDwb3PT/+7TLDWyw1Dy/Xv7iGUIEXXav7usHDE9HVhOU61irI3EnyyHA==
+
 seroval@^1.1.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/seroval/-/seroval-1.2.1.tgz#fc671d63445923ab64f7abaf3967c83901382f40"
   integrity sha512-yBxFFs3zmkvKNmR0pFSU//rIsYjuX418TnlDmc2weaq5XFDqDIV/NOMPBoLrbxjLH42p4UzRuXHryXh9dYcKcw==
+
+seroval@~1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/seroval/-/seroval-1.5.0.tgz#aba4cffbd0c4c8a4351358362acf40ee8d74d97b"
+  integrity sha512-OE4cvmJ1uSPrKorFIH9/w/Qwuvi/IMcGbv5RKgcJ/zjA/IohDLU6SVaxFN9FwajbP7nsX0dQqMDes1whk3y+yw==
 
 solid-js@^1.8.15:
   version "1.9.5"
@@ -720,6 +730,15 @@ solid-js@^1.8.15:
     csstype "^3.1.0"
     seroval "^1.1.0"
     seroval-plugins "^1.1.0"
+
+solid-js@^1.9.11:
+  version "1.9.11"
+  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-1.9.11.tgz#1d36c755d10b7d5f7d016d2421c7e39b5b84f99e"
+  integrity sha512-WEJtcc5mkh/BnHA6Yrg4whlF8g6QwpmXXRg4P2ztPmcKeHHlH4+djYecBLhSpecZY2RRECXYUwIc/C2r3yzQ4Q==
+  dependencies:
+    csstype "^3.1.0"
+    seroval "~1.5.0"
+    seroval-plugins "~1.5.0"
 
 solid-refresh@^0.6.3:
   version "0.6.3"
